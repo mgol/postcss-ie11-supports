@@ -1,0 +1,25 @@
+{
+    "root": true,
+
+    "extends": "mgol",
+
+    "parserOptions": {
+        "ecmaVersion": 2017,
+        "sourceType": "script"
+    },
+
+    "env": {
+        "es6": true,
+        "node": true
+    },
+
+    "overrides": [
+        {
+            "files": ["test/**/*"],
+
+            "env": {
+                "jest": true
+            }
+        }
+    ]
+}
