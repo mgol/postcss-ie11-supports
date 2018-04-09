@@ -35,8 +35,10 @@
   },
   "files": [
     "README.md",
+    "CHANGELOG.md",
     "LICENSE",
-    "index.js"
+    "index.js",
+    "lib"
   ],
   "jest": {
     "testEnvironment": "node"

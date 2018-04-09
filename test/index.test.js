@@ -1,6 +1,6 @@
 'use strict';
 
-const {ieSelector} = require('../constants');
+const {ieSelector} = require('../lib/constants');
 const {run} = require('./utils');
 
 it('doesn\'t touch regular blocks', () =>
