@@ -67,3 +67,20 @@ it('transforms "@support not" blocks', () =>
         `,
     ),
 );
+
+it('accepts the ieSelector parameter', () =>
+    run(
+        `
+            @supports not (display: grid) {
+                a { color: black; }
+            }
+        `,
+        `
+            @supports not (display: grid) {
+                a { color: black; }
+            }
+                :-ms-lang(x), a { color: black; }
+        `,
+        {ieSelector: ':-ms-lang(x)'},
+    ),
+);
