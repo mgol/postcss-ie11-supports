@@ -6,29 +6,39 @@
 [ci-img]:  https://travis-ci.org/mgol/postcss-ie11-supports.svg
 [ci]:      https://travis-ci.org/mgol/postcss-ie11-supports
 
-This plugin adds basic support for `@supports` in IE 11. It makes IE skip all `@supports` block but apply all `@supports not` ones. Since `@supports` is generally used for APIs newer than IE 11 this is an acceptable solution.
+The plugin makes IE skip all `@supports` blocks but apply all `@supports not` ones. Since `@supports` is generally used for APIs newer than IE 11 this is an acceptable solution.
 
 The way it does this is by prepending a selector understood by IE 11 only to the existing selector, making all other browsers ignore this rule.
 
 Example input:
 ```css
 @supports (display: grid) {
-    .box { /* Grid styles */ }
+    .box {
+        /* Grid styles, applied to modern browsers. */
+    }
 }
 @supports not (display: grid) {
-    .box { /* Fallback styles */ }
+    .box {
+        /* Fallback styles, applied to older browsers, including IE 11. */
+    }
 }
 ```
 
 Example output:
 ```css
 @supports (display: grid) {
-    .box { /* Grid styles */ }
+    .box {
+        /* Grid styles, applied to modern browsers. */
+    }
 }
 @supports not (display: grid) {
-    .box { /* Fallback styles */ }
+    .box {
+        /* Fallback styles, applied to older browsers, including IE 11. */
+    }
 }
-:-ms-fullscreen, .box { /* Fallback styles */ }
+:-ms-fullscreen, .box {
+    /* Fallback styles, applied to older browsers, including IE 11. */
+}
 ```
 
 ## Usage
