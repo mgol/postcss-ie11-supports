@@ -51,6 +51,7 @@ it('transforms "@support not" blocks', () =>
             }
         `,
         // For some reason the first at-rule gets extra spaces for its appended cloned nodes.
+        // See https://github.com/postcss/postcss/issues/1137
         `
             @supports not (display: grid) {
                 a { color: black; }
