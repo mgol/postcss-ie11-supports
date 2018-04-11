@@ -80,8 +80,8 @@ it('accepts the ieSelector parameter', () =>
             @supports not (display: grid) {
                 a { color: black; }
             }
-                :-ms-lang(x), a { color: black; }
+                _:-ms-lang(x), a { color: black; }
         `,
-        {ieSelector: ':-ms-lang(x)'},
+        {ieSelector: '_:-ms-lang(x)'},
     ),
 );

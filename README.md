@@ -36,7 +36,7 @@ Example output:
         /* Fallback styles, applied to older browsers, including IE 11. */
     }
 }
-:-ms-fullscreen, .box {
+_:-ms-fullscreen, .box {
     /* Fallback styles, applied to older browsers, including IE 11. */
 }
 ```
@@ -51,6 +51,6 @@ postcss([
 
 ### Options
 
-`ieSelector`: A selector used to taint a block cloned outside of `@supports not` so that it's accepted in IE 11 only. By default `':-ms-fullscreen'`, can be changed to e.g. `:-ms-lang(x)` to support IE 10 as well. Use with caution so that good browsers are not punished!
+`ieSelector`: A selector used to taint a block cloned outside of `@supports not` so that it's accepted in IE 11 only. By default `'_:-ms-fullscreen'`, can be changed to e.g. `_:-ms-lang(x)` to support IE 10 as well. Use with caution so that good browsers are not punished!
 
 See [PostCSS] docs for examples for your environment.
