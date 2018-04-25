@@ -49,8 +49,16 @@ postcss([
 ])
 ```
 
-### Options
+### Advanced usage
 
-`ieSelector`: A selector used to taint a block cloned outside of `@supports not` so that it's accepted in IE 11 only. By default `'_:-ms-fullscreen'`, can be changed to e.g. `_:-ms-lang(x)` to support IE 10 as well. Use with caution so that good browsers are not punished!
+This plugin relies on a behavior of CSS that if browsers don't recognize a certain selector they drop the whole rule even if other selectors after the unrecognized one match. The default selector used, `'_:-ms-fullscreen'`, is recognized only by IE 11. You can change it to a different one that is recognized by other browsers by passing a `ieSelector` option, e.g.:
+```js
+postcss([
+    require('postcss-ie11-supports')({
+        ieSelector: '_:-ms-lang(x)',
+    }),
+])
+```
+will match IE 10 and 11. Note, however, that IE 10 support is not official so bugs affecting only that browser (and not affecting IE 11) may not be fixed.
 
 See [PostCSS] docs for examples for your environment.
