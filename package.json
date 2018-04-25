@@ -1,6 +1,6 @@
 {
   "name": "postcss-ie11-supports",
-  "version": "0.1.3-pre",
+  "version": "0.1.3",
   "description": "PostCSS plugin adding \"@supports not\" support for IE 11",
   "keywords": [
     "postcss",
