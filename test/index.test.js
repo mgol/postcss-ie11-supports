@@ -1,16 +1,16 @@
-'use strict';
+import test from 'node:test';
 
-const {ieSelector} = require('../lib/constants');
-const {run} = require('./utils');
+import {ieSelector} from '../lib/constants.js';
+import {run} from './utils.js';
 
-it('doesn\'t touch regular blocks', () =>
+test('doesn\'t touch regular blocks', () =>
     run(
         'a { color: black; }',
         'a { color: black; }',
     ),
 );
 
-it('doesn\'t touch "@support" blocks', () =>
+test('doesn\'t touch "@support" blocks', () =>
     run(
         `
             @supports (display: grid) {
@@ -37,7 +37,7 @@ it('doesn\'t touch "@support" blocks', () =>
     ),
 );
 
-it('transforms "@support not" blocks', () =>
+test('transforms "@support not" blocks', () =>
     run(
         `
             @supports not (display: grid) {
@@ -69,7 +69,7 @@ it('transforms "@support not" blocks', () =>
     ),
 );
 
-it('accepts the ieSelector parameter', () =>
+test('accepts the ieSelector parameter', () =>
     run(
         `
             @supports not (display: grid) {
