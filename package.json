@@ -25,9 +25,9 @@
     "postcss": "^8.5.6"
   },
   "devDependencies": {
-    "eslint": "9.34.0",
+    "eslint": "9.39.1",
     "eslint-config-mgol": "0.0.50",
-    "globals": "16.3.0"
+    "globals": "16.5.0"
   },
   "scripts": {
     "lint": "eslint .",
